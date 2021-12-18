@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Runtime Complexity is O(n)
+ * Space Complexity is O(n)
+ */
 public class BuySellStocksTwice {
     public double buySellStocksTwice(List<Integer> data) {
         double maxTotalProfit=0.0;
@@ -25,7 +29,10 @@ public class BuySellStocksTwice {
         System.out.println(maxTotalProfit);
         return maxTotalProfit;
     }
-
+    /**
+     * Runtime Complexity is O(n)
+     * Space Complexity is O(1)
+     */
     public int maxProfit(int[] prices) {
 
         int t1Cost = Integer.MAX_VALUE,
