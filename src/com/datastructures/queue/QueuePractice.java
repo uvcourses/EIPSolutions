@@ -16,7 +16,7 @@ public class QueuePractice {
         deque.add(60);
 
         while(!deque.isEmpty()){
-            System.out.println(deque.pop());
+            System.out.println(deque.pollLast());
         }
     }
 }

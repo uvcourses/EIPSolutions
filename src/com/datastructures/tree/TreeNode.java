@@ -1,11 +1,11 @@
 package com.datastructures.tree;
 
 public class TreeNode {
-    TreeNode left;
-    TreeNode right;
-    int data;
+    public TreeNode left;
+    public TreeNode right;
+    public int data;
 
-   public TreeNode(int value) {
+    public TreeNode(int value) {
         this.data = value;
         this.left = null;
         this.right = null;

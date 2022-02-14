@@ -1,4 +1,6 @@
-package com.datastructures.tree;
+package com.datastructures.queue;
+
+import com.datastructures.tree.TreeNode;
 
 import java.util.Stack;
 
@@ -53,7 +55,7 @@ public class TreeWork
     public TreeNode constructTree(){
         TreeNode rootTree=new TreeNode(314);
         TreeNode node6left=new TreeNode(6);
-        TreeNode node6right=new TreeNode(9);
+        TreeNode node6right=new TreeNode(6);
         rootTree.left=node6left;
         rootTree.right=node6right;
 
@@ -131,4 +133,6 @@ public class TreeWork
         TreeNode root=treeWork.constructTree();
         preOrder(root);
     }
+
+
 }
