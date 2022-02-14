@@ -15,31 +15,27 @@ public class SpiralOrder {
         boolean flag = true;
         while (!currentDepth.isEmpty()) {
             Deque<TreeNode> nextNode = new LinkedList<>();
-            List<Integer> level = new ArrayList<>();
+            LinkedList<Integer> level = new LinkedList<>();
             while (!currentDepth.isEmpty()) {
                 TreeNode currentNode;
-                if (flag) {
-                    currentNode = currentDepth.pollLast();
-                } else {
-                    currentNode = currentDepth.pollLast();
-                }
+                currentNode = currentDepth.pollFirst();
                 //currentNode = nextNodeStack.pollFirst();
-                if (currentNode != null) {
-                    level.add(currentNode.data);
-                }
                 if (flag) {
-                    if (currentNode.right != null)
-                        nextNode.add(currentNode.right);
-                    if (currentNode.left != null)
-                        nextNode.add(currentNode.left);
+                    if (currentNode != null) {
+                        level.addLast(currentNode.data);
+                    }
                 } else {
-                    if (currentNode.left != null)
-                        nextNode.add(currentNode.left);
-                    if (currentNode.right != null)
-                        nextNode.add(currentNode.right);
+                    if (currentNode != null) {
+                        level.addFirst(currentNode.data);
+                    }
                 }
+                if (currentNode.left != null)
+                    nextNode.add(currentNode.left);
+                if (currentNode.right != null)
+                    nextNode.add(currentNode.right);
             }
-            result.add(level);
+              result.add(level);
+
             currentDepth = nextNode;
             if (flag)
                 flag = false;
