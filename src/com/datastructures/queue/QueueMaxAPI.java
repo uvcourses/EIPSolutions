@@ -2,7 +2,6 @@ package com.datastructures.queue;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.LinkedList;
 
 public class QueueMaxAPI {
     Deque<QueueMax> queue=new ArrayDeque<>();
