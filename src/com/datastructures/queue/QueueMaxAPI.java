@@ -1,24 +1,33 @@
 package com.datastructures.queue;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.*;
 
 public class QueueMaxAPI {
-    Deque<QueueMax> queue=new ArrayDeque<>();
-    public int getMax(){
-        if(!queue.isEmpty()){
-            return queue.peekLast().max;
+    Queue<Integer> queue = new ArrayDeque<>();
+    Deque<Integer> max = new ArrayDeque<>();
+
+    public int getMax() {
+        if (!max.isEmpty()) {
+            return max.peekFirst();
         }
         return 0;
     }
-    public void push(int data){
-        queue.add(new QueueMax(data,Math.max(data,!queue.isEmpty() ? queue.getLast().max:data)));
+
+    public void push(int data) {
+        queue.add(data);
+        max.addFirst(Math.max(data, !max.isEmpty() ? max.peekFirst() : data));
     }
-    public void pop(){
-        System.out.println(queue.removeFirst().element);
+
+    public void pop() {
+        Integer poll = queue.poll();
+        max.remove(poll);
+        while(!queue.isEmpty()){
+            //max.addFirst(Math.max(max.peekFirst(),));
+        }
     }
+
     public static void main(String[] args) {
-        QueueMaxAPI queueMaxAPI=new QueueMaxAPI();
+        QueueMaxAPI queueMaxAPI = new QueueMaxAPI();
         queueMaxAPI.push(135);
         queueMaxAPI.push(15);
         queueMaxAPI.push(125);
@@ -26,11 +35,10 @@ public class QueueMaxAPI {
         queueMaxAPI.push(65);
         queueMaxAPI.push(45);
 
-        System.out.println(queueMaxAPI.getMax());
+          System.out.println(queueMaxAPI.getMax());
 
-        queueMaxAPI.pop();
-        System.out.println(queueMaxAPI.getMax());
-
+          queueMaxAPI.pop();
+         System.out.println(queueMaxAPI.getMax());
 
     }
 }
