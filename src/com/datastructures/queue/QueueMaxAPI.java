@@ -22,7 +22,7 @@ public class QueueMaxAPI {
         Integer poll = queue.poll();
         max.remove(poll);
         while(!queue.isEmpty()){
-            //max.addFirst(Math.max(max.peekFirst(),));
+           // max.addFirst(Math.max(max.peekFirst(),));
         }
     }
 
