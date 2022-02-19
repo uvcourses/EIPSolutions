@@ -2,43 +2,56 @@ package com.datastructures.queue;
 
 import java.util.*;
 
-public class QueueMaxAPI {
-    Queue<Integer> queue = new ArrayDeque<>();
-    Deque<Integer> max = new ArrayDeque<>();
+public class QueueMaxAPI<T extends Comparable<T>> {
+    Queue<T> queue = new ArrayDeque<>();
+    Deque<T> max = new ArrayDeque<>();
 
-    public int getMax() {
+    public T getMax() {
         if (!max.isEmpty()) {
             return max.peekFirst();
         }
-        return 0;
+        throw new NoSuchElementException();
     }
 
-    public void push(int data) {
+    public void enqueue(T data) {
         queue.add(data);
-        max.addFirst(Math.max(data, !max.isEmpty() ? max.peekFirst() : data));
+        while (!max.isEmpty() && max.peekLast().compareTo(data) < 0) {
+            max.removeLast();
+        }
+        max.addLast(data);
     }
 
-    public void pop() {
-        Integer poll = queue.poll();
-        max.remove(poll);
-        while(!queue.isEmpty()){
-           // max.addFirst(Math.max(max.peekFirst(),));
+    public void dequeue() {
+        T remove = queue.poll();
+        if (remove.equals(max.peekFirst())) {
+            max.removeFirst();
         }
     }
 
     public static void main(String[] args) {
         QueueMaxAPI queueMaxAPI = new QueueMaxAPI();
-        queueMaxAPI.push(135);
-        queueMaxAPI.push(15);
-        queueMaxAPI.push(125);
-        queueMaxAPI.push(75);
-        queueMaxAPI.push(65);
-        queueMaxAPI.push(45);
 
-          System.out.println(queueMaxAPI.getMax());
+        queueMaxAPI.enqueue(70);
+        queueMaxAPI.enqueue(20);
+        queueMaxAPI.enqueue(30);
+        queueMaxAPI.enqueue(40);
+        queueMaxAPI.enqueue(50);
+        queueMaxAPI.enqueue(60);
 
-          queueMaxAPI.pop();
-         System.out.println(queueMaxAPI.getMax());
+        System.out.println(queueMaxAPI.getMax());
+        queueMaxAPI.dequeue();
+        System.out.println(queueMaxAPI.getMax());
+        queueMaxAPI.dequeue();
+        System.out.println(queueMaxAPI.getMax());
+        queueMaxAPI.dequeue();
+        System.out.println(queueMaxAPI.getMax());
+        queueMaxAPI.dequeue();
+        System.out.println(queueMaxAPI.getMax());
+        queueMaxAPI.dequeue();
+        System.out.println(queueMaxAPI.getMax());
+        queueMaxAPI.dequeue();
+        System.out.println(queueMaxAPI.getMax());
+
 
     }
 }
