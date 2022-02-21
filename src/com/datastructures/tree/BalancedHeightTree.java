@@ -4,6 +4,8 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class BalancedHeightTree {
+    int leftHeight = 0, rightHeight = 0;
+
     public boolean balancedTree(BinaryTreeNode rootNode) {
         int result = 0;
         result = isHeightBalanced(rootNode);
@@ -14,7 +16,6 @@ public class BalancedHeightTree {
     }
 
     public int isHeightBalanced(BinaryTreeNode currentNode) {
-        int leftHeight = 0, rightHeight = 0;
         if (currentNode == null) {
             return 1;
         }
@@ -56,7 +57,7 @@ public class BalancedHeightTree {
         BinaryTreeNode<String> nodeC = new BinaryTreeNode<>("C");
 
         nodeA.left = nodeB;
-        nodeA.right = nodeC;
+        //  nodeA.right = nodeC;
 
         BinaryTreeNode<String> nodeD = new BinaryTreeNode<>("D");
         BinaryTreeNode<String> nodeE = new BinaryTreeNode<>("E");
