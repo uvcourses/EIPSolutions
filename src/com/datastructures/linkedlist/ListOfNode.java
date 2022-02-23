@@ -118,13 +118,34 @@ public class ListOfNode {
         }
         return L;
     }
+    public Node rotateRight(Node head, int k) {
+        Node current=head;
+        int count =1;
+        while(current!=null && current.next!=null){
+            current=current.next;
+            ++count;
+        }
+        k=k%count;
+        if(count==k) {
+            return head;
+        }
+        current.next=head;
+        int headCount=count-k;
 
+        Node newHead=head;
+
+        while(headCount-- >=1 && newHead!=null){
+            newHead=newHead.next;
+        }
+        Node result=newHead.next;
+        newHead.next=null;
+
+        return result;
+    }
     public static void main(String[] args) {
-        ListOfNode listNode = new ListOfNode();
-        Node list = listNode.constructNode(Arrays.asList(1, 2, 3, 4, 5));
-        listNode.printList(list, "Constructed List");
-
-        Node cycle = listNode.constructCycle(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8), 4);
-        System.out.println();
+        ListOfNode Node = new ListOfNode();
+        Node cycle = Node.constructCycle(Arrays.asList(0,1,2), 4);
+       Node output= Node.rotateRight(cycle,4);
+        Node.printList(output,"after Rotate");
     }
 }

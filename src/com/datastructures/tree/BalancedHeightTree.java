@@ -4,33 +4,34 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class BalancedHeightTree {
-    int leftHeight = 0, rightHeight = 0;
+    int leftHeight = -1, rightHeight = -1;
 
     public boolean balancedTree(BinaryTreeNode rootNode) {
-        int result = 0;
-        result = isHeightBalanced(rootNode);
-        if (result <= 1) {
-            return true;
-        }
-        return false;
+        return isHeightBalanced(rootNode,-1);
     }
 
-    public int isHeightBalanced(BinaryTreeNode currentNode) {
+    public boolean isHeightBalanced(BinaryTreeNode currentNode,int height) {
         if (currentNode == null) {
-            return 1;
+            return true;
         }
 
-        leftHeight += isHeightBalanced(currentNode.left);
+       boolean leftTree= isHeightBalanced(currentNode.left,leftHeight);
+        if(!leftTree)
+            return false;
+       boolean rightTree=isHeightBalanced(currentNode.right,rightHeight);
 
-        rightHeight += isHeightBalanced(currentNode.right);
-        System.out.print(currentNode.data);
-        return Math.abs(leftHeight - rightHeight);
+       if(rightTree)
+            return false;
+
+
+        Math.max(leftHeight,rightHeight);
+        return Math.abs(leftHeight - rightHeight)<=1;
     }
 
     public int heightOfTree(BinaryTreeNode height) {
         Deque<BinaryTreeNode> queue = new ArrayDeque<>();
         queue.add(height);
-        int treeHeight = 0;
+        int treeHeight = -1;
         while (!queue.isEmpty()) {
             Deque<BinaryTreeNode> nextLevel = new ArrayDeque<>();
             while (!queue.isEmpty()) {
@@ -46,8 +47,8 @@ public class BalancedHeightTree {
             treeHeight++;
             queue = nextLevel;
         }
-        System.out.println("Tree Height " + (treeHeight - 1));
-        return treeHeight - 1;
+        System.out.println("Tree Height " + (treeHeight));
+        return treeHeight ;
     }
 
     public static void main(String[] args) {
