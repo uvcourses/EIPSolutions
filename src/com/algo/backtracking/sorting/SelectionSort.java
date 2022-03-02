@@ -3,7 +3,7 @@ package com.algo.backtracking.sorting;
 public class SelectionSort {
     public static void main(String[] args) {
         SelectionSort selectionSort = new SelectionSort();
-        selectionSort.sorting(new int[]{10, 8, 2, 4, 5, 1});
+        selectionSort.sorting(new int[]{1, 2, 3, 4, 5, 6});
     }
 
     private void sorting(int[] input) {
