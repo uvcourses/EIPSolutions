@@ -20,7 +20,7 @@ public class MergeSort {
         if (start == end) {
             return;
         }
-        int mid = (start + start) / 2;
+        int mid = (start + end) / 2;
         helper(input, start, mid);
         helper(input, mid + 1, end);
 

@@ -13,10 +13,12 @@ public class WeightsCount {
             while (j < weights.size()) {
                 min = Math.min(weights.get(j), min);
                 max = Math.max(max, weights.get(j));
+                System.out.println(i + "," + j);
                 j++;
                 if (max - min <= k) {
                     result++;
                 }
+
             }
 
         }
@@ -25,7 +27,7 @@ public class WeightsCount {
 
     public static void main(String[] args) {
         WeightsCount weightsCount = new WeightsCount();
-        int output = weightsCount.countSegment(Arrays.asList(1, 10, 2), 9);
+        int output = weightsCount.countSegment(Arrays.asList(1, 3, 6), 3);
         System.out.println(output);
     }
 }
