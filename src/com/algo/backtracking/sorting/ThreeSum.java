@@ -12,11 +12,11 @@ public class ThreeSum {
             while (j < k) {
                 int target = nums[i] + nums[j] + nums[k];
                 if (target == 0) {
-                    List<Integer> result1 = new ArrayList<>();
-                    result1.add(nums[i]);
-                    result1.add(nums[j]);
-                    result1.add(nums[k]);
-                    result.add(result1);
+                    List<Integer> interMident = new ArrayList<>();
+                    interMident.add(nums[i]);
+                    interMident.add(nums[j]);
+                    interMident.add(nums[k]);
+                    result.add(interMident);
                     j++;
                     k--;
                 } else if (target > 0) {
