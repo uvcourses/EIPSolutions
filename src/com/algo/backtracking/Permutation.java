@@ -8,6 +8,7 @@ public class Permutation {
 
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         ArrayList<Integer> partialSol = new ArrayList<Integer>();
+
         permuteHelper(arr, 0, partialSol, result);
         System.out.println(result);
         return result;
