@@ -22,6 +22,11 @@ public class Permutation {
             return;
         } else {
             for (int pick = i; pick < arr.size(); pick++) {
+
+                if(pick!=i && arr.get(pick)==arr.get(i) || (i>0 && arr.get(i)==arr.get(i-1))){
+                    continue;
+                }
+
                 Collections.swap(arr, pick, i);
                 partialSol.add(arr.get(i));
                 permuteHelper(arr, i + 1, partialSol, result);
