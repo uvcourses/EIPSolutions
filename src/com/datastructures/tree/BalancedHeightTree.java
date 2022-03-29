@@ -1,3 +1,4 @@
+/*
 package com.datastructures.tree;
 
 import java.util.ArrayDeque;
@@ -60,14 +61,14 @@ public class BalancedHeightTree {
         nodeA.left = nodeB;
         //  nodeA.right = nodeC;
 
-        BinaryTreeNode<String> nodeD = new BinaryTreeNode<>("D");
-        BinaryTreeNode<String> nodeE = new BinaryTreeNode<>("E");
+        BinaryTreeNode<Integer> nodeD = new BinaryTreeNode<Integer>();
+        BinaryTreeNode<Integer> nodeE = new BinaryTreeNode<Integer>();
 
         nodeB.left = nodeD;
         nodeB.right = nodeE;
 
-        BinaryTreeNode<String> nodeF = new BinaryTreeNode<>("F");
-        BinaryTreeNode<String> nodeG = new BinaryTreeNode<>("G");
+        BinaryTreeNode<Integer> nodeF = new BinaryTreeNode<>("F");
+        BinaryTreeNode<Integer> nodeG = new BinaryTreeNode<>("G");
 
         nodeC.left = nodeF;
         nodeC.right = nodeG;
@@ -79,3 +80,4 @@ public class BalancedHeightTree {
         System.out.println(result);
     }
 }
+*/

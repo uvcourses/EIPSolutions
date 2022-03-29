@@ -1,11 +1,11 @@
 package com.datastructures.tree;
 
 public class BinaryTreeNode<T> {
-    T data;
+    Integer data;
     BinaryTreeNode left;
     BinaryTreeNode right;
 
-    public BinaryTreeNode(T data) {
+    public BinaryTreeNode(Integer data) {
         this.left = null;
         this.right = null;
         this.data = data;
