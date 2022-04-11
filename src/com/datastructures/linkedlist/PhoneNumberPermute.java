@@ -38,6 +38,6 @@ public class PhoneNumberPermute {
         }
     }
     public static void main(String[] args) {
-        get_words_from_phone_number("1010101");
+        get_words_from_phone_number("23");
     }
 }
