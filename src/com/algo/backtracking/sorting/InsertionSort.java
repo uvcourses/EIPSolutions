@@ -19,6 +19,10 @@ public class InsertionSort {
             ints[red + 1] = temp;
         }
 
+        // 0 to red your array size
+
+
+
         for (int j = 0; j < ints.length; j++) {
             System.out.println(ints[j]);
         }

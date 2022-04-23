@@ -1,8 +1,6 @@
 package com.datastructures.linkedlist;
 
-import com.sun.org.apache.bcel.internal.generic.L2D;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 

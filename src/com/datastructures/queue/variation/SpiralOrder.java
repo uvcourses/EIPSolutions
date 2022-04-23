@@ -1,9 +1,7 @@
 package com.datastructures.queue.variation;
 
-import com.datastructures.queue.TreeLevelOrderPrinting;
 import com.datastructures.tree.TreeNode;
 import com.datastructures.tree.TreeWork;
-import com.sun.deploy.security.SelectableSecurityManager;
 
 import java.util.*;
 

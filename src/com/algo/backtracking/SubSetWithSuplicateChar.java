@@ -2,7 +2,6 @@ package com.algo.backtracking;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Locale;
 
 public class SubSetWithSuplicateChar {
     static ArrayList<String> get_distinct_subsets(String s) {
