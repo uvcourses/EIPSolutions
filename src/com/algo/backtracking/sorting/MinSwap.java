@@ -26,6 +26,8 @@ public class MinSwap {
         System.out.println(minStep);
         return minStep;
     }
+
+
     public static void main(String[] args) {
        minSwap(new int[] {4,11,9,10,12});
         minSwap(new int[] {3,2,1});
